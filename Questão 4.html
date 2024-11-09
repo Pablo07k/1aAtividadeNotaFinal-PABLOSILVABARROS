@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>     
+    
+    <script type="text/javascript">
+    
+    function CalculodoImc(){
+    
+        var peso = parseFloat(document.formImc.peso.value);
+    
+        var altura = parseFloat(document.formImc.altura.value);
+    
+        var imc = peso/(altura*altura);
+    
+        document.formImc.resultado.value = imc.toFixed(2);
+	
+    }
+  
+</script>
+<style>
+    body {
+        background-color: chocolate;
+        text-align: center;
+        color: bisque;
+    }
+    header {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <h2>Calculadora de IMC</h2>
+
+    <form action="imc.html" name="formImc" method="post" onsubmit="return CalculodoImc();">
+
+    <p>Seu Peso em (kg):<br> <input type="text" name="peso"></p>
+    
+    <p>Sua altura em (m):<br> <input type="text" name="altura"></p>
+    
+    <p><input type="button" value="Calcular IMC" onclick="CalculodoImc();">
+    
+    <p>Seu IMC é:<br> <input type="text" name="resultado"></p>
+
+</form>
+</body>
+</html>
